@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jrN-dJ-S8w">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -46,7 +45,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-al-STT">
                                                     <rect key="frame" x="81" y="50" width="231" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thai, Seafood, Salad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBG-Gw-eC8">
@@ -70,7 +69,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yud-PW-dh5">
                                                     <rect key="frame" x="81" y="4" width="115" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="0.07 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NY-Pw-nyW">
@@ -121,20 +120,38 @@
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="6pO-pi-Iuu">
                         <barButtonItem key="leftBarButtonItem" title="Filters" id="pk6-Vi-htK">
+                            <color key="tintColor" red="0.92647174870000004" green="0.92647174870000004" blue="0.92647174870000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="0d3-HK-Gs4" kind="modal" id="0ca-87-7Mv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="e9Z-D2-VVa" id="xdM-za-LuB"/>
                         <outlet property="tableView" destination="Zig-Sy-M0I" id="0bM-Fp-qYE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="mgC-kh-fi8">
+                    <connections>
+                        <outlet property="delegate" destination="2xI-yr-O5N" id="6yK-pM-AeX"/>
+                        <outlet property="searchContentsController" destination="2xI-yr-O5N" id="hYI-ob-T9W"/>
+                        <outlet property="searchResultsDataSource" destination="2xI-yr-O5N" id="fs6-Wq-NAn"/>
+                        <outlet property="searchResultsDelegate" destination="2xI-yr-O5N" id="7l0-nf-iWO"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="e9Z-D2-VVa">
+                    <connections>
+                        <outlet property="delegate" destination="2xI-yr-O5N" id="Dzh-zj-bWO"/>
+                        <outlet property="searchContentsController" destination="2xI-yr-O5N" id="Izt-aB-npj"/>
+                        <outlet property="searchResultsDataSource" destination="2xI-yr-O5N" id="gkX-4J-sOA"/>
+                        <outlet property="searchResultsDelegate" destination="2xI-yr-O5N" id="ZTY-4x-cIs"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1326" y="421"/>
         </scene>
-        <!--Filters-->
+        <!--Yelp-->
         <scene sceneID="wQu-zZ-gfM">
             <objects>
                 <viewController id="zZ2-Ra-QPT" customClass="FiltersViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,7 +177,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1q-Ey-3Q3">
                                                     <rect key="frame" x="18" y="13" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXX-bn-y6H">
@@ -191,13 +208,15 @@
                             <constraint firstItem="SHF-dp-fIt" firstAttribute="top" secondItem="TVC-gu-jAs" secondAttribute="top" id="uC5-yh-N5y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Filters" id="obd-8V-SdK">
+                    <navigationItem key="navigationItem" title="Yelp" id="obd-8V-SdK">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="3nG-VB-83k">
+                            <color key="tintColor" red="0.92647174870000004" green="0.92647174870000004" blue="0.92647174870000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCancelButton:" destination="zZ2-Ra-QPT" id="WFD-MG-0tG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="SVb-ek-NG8">
+                            <color key="tintColor" red="0.92647174870000004" green="0.92647174870000004" blue="0.92647174870000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onSearchButton:" destination="zZ2-Ra-QPT" id="h2t-IJ-kpO"/>
                             </connections>
@@ -219,6 +238,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iVZ-Dg-5q5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.72595091540404044" green="0.11825345365770788" blue="0.021592109375933772" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -237,6 +257,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDv-fK-TcG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.72595091540404044" green="0.11825345365770788" blue="0.021592109375933772" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
